@@ -4,16 +4,22 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
-
+- master
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world has been changed by Gopi!
-  displayName: 'Run a one-line script'
+jobs:
+- job: myjob1
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  steps:
+  - script: echo First Job - Hello, world!
+    displayName: 'Run a one-line script'
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+    displayName: 'Run a multi-line script'
+    
+- job: myjob2
+  steps:
+  - script: echo second job part
+    displayName: 'Run a one-line script'
