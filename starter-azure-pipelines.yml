@@ -12,7 +12,7 @@ jobs:
 - job: myjob1
 
   steps:
-  - script: echo First Job - Hello, world!
+  - script: echo john cena First Job - Hello, world!
     displayName: 'Run a one-line script'
   - script: |
       echo Add other tasks to build, test, and deploy your project.
@@ -21,5 +21,5 @@ jobs:
     
 - job: myjob2
   steps:
-  - script: echo second job part updated another time
+  - script: echo undertaker second job part updated another time
     displayName: 'Run a one-line script'
