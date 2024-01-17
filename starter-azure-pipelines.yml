@@ -20,6 +20,13 @@ jobs:
     displayName: 'Run a multi-line script'
     
 - job: myjob2
+  dependsOn: myjob1
   steps:
   - script: echo undertaker second job part updated another time
+    displayName: 'Run a one-line script'
+
+- job: myjob3
+  dependsOn: myjob2
+  steps:
+  - script: echo third job part
     displayName: 'Run a one-line script'
