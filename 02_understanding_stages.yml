@@ -29,12 +29,12 @@ stages:
     - bash: echo $(environment)Devdeploy
 - stage: QAdeploy
   variables:
-    environment: Dev
+    environment: QA
   dependsOn: Build
   jobs:
   - job: QAdeploy
     steps:
-    - bash: echo $(environment) QAdeploy
+    - bash: echo $(environment) deploy
 - stage: Proddeploy
   dependsOn:
   - Devdeploy
