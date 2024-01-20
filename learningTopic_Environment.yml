@@ -19,26 +19,21 @@ stages:
 
 - stage: Devdeploy
   jobs:
-   - deployment: DevdeployJob
-     environment: Dev
-     startegy:
-       runOnce:
-         deploy:
-           steps:
-           - script: echo deploy to Dev
+  - deployment: DevdeployJob
+    environment: Dev
+    strategy:
+      runOnce:
+       deploy:
+         steps:
+         - script: echo deploy to Dev
 
 - stage: QAdeploy
   jobs:
-   - deployment: QAdeployJob
-     environment: QA
-     startegy:
-       runOnce:
-         deploy:
-           steps:
-           - script: echo deploy to QA
+  - deployment: QAdeployJob
+    environment: QA
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo deploy to QA
 
-
-
-steps:
-- script: echo Running on $(operatingSystem)!
-  displayName: 'Run a one-line script'
