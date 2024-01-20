@@ -36,4 +36,3 @@ stages:
         deploy:
           steps:
           - script: echo deploy to QA
-
