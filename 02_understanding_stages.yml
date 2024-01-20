@@ -16,13 +16,26 @@ stages:
     steps:
     - bash: echo build first job
     - bash: echo $(pipelineLevelVariable)
-    - bash: echo $(build.BuildNumber)
-    - bash: echo $(build.BuildId)
-    - bash: echo $(build.SourceBranchName)
-    - bash: echo $(build.SourceDirectory)
-    - bash: echo $(System.DefaultNetworkingDirectory)
-    - bash: ls -R $(System.DefaultNetworkingDirectory)
-    - bash: echo $(build.ArtifactStagingDirectory)
+    - bash: echo $(Build.BuildNumber)
+    - bash: echo $(Build.BuildId)
+    - bash: echo $(Build.SourceBranchName)
+    - bash: echo $(Build.SourceDirectory)
+    - bash: echo $(System.DefaultworkingDirectory)
+    - bash: ls -R $(System.DefaultworkingDirectory)
+    - bash: echo $(Build.ArtifactStagingDirectory)
+    - bash: java --version
+    - bash: node --version
+    - bash: python --version
+    - bash: mvn --version*
+    - bash: ls -R $(Build.ArtifactStagingDirectory)
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(System.DefaultworkingDirectory)'
+        Contents: |
+          **/*.yaml
+          **/*.tf
+        TargetFolder: '$(build.ArtifactStagingDirectory)'
+    - bash: ls -R $(Build.ArtifactStagingDirectory)
   # - job: SecondJob
   #   steps:
   #   - bash: echo build second job
