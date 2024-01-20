@@ -26,7 +26,7 @@ stages:
     - bash: java --version
     - bash: node --version
     - bash: python --version
-    - bash: mvn --version*
+    - bash: mvn --version
     - bash: ls -R $(Build.ArtifactStagingDirectory)
     - task: CopyFiles@2
       inputs:
@@ -36,6 +36,11 @@ stages:
           **/*.tf
         TargetFolder: '$(build.ArtifactStagingDirectory)'
     - bash: ls -R $(Build.ArtifactStagingDirectory)
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
   # - job: SecondJob
   #   steps:
   #   - bash: echo build second job
