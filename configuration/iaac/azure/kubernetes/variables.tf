@@ -17,13 +17,16 @@ variable node_count {
 
 
 variable dns_prefix {
-  default = "k8stest"
+  default = "k8stesting"
 }
 
 variable cluster_name {
-  default = "k8stest"
+  default = "k8stesting"
 }
 
 variable resource_group {
   default = "kubernetesIaaC"
+
 }
+
+
