@@ -7,23 +7,23 @@ variable environment {
 }
 
 variable location {
-    default = "westeurope"
+    default = "East US"
 }
 
 variable node_count {
-  default = 3
+  default = 1
 }
 
 
 
 variable dns_prefix {
-  default = "k8stest"
+  default = "k8stesting"
 }
 
 variable cluster_name {
-  default = "k8stest"
+  default = "k8stesting"
 }
 
 variable resource_group {
-  default = "kubernetes"
+  default = "kubernetesIaaC"
 }
