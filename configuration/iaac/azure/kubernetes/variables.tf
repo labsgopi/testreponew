@@ -7,11 +7,11 @@ variable environment {
 }
 
 variable location {
-    default = "westeurope"
+    default = "East US"
 }
 
 variable node_count {
-  default = 3
+  default = 1
 }
 
 
@@ -25,5 +25,5 @@ variable cluster_name {
 }
 
 variable resource_group {
-  default = "kubernetes"
+  default = "kubernetesIaaC"
 }
