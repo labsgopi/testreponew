@@ -37,7 +37,6 @@ steps:
 - task: TerraformCLI@2
   inputs:
     command: 'apply'
-    environmentServiceName: 'AzureRMConnection'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
     commandOptions: '-var client_id=$(AzureRMConnection.azuresubscriptionconnection.clientId) -var client_secret=$(AzureRMConnection.azuresubscriptionconnection.clientSecret) -var ssh_public_key=$(publickkey.securefilepath)'
 
