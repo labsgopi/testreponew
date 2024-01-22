@@ -39,6 +39,6 @@ steps:
     command: 'apply'
     environmentServiceName: 'AzureRMConnection'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickkey.securefilepath)'
+    commandOptions: '-var client_id=$(serviceConnection.azuresubscriptionconnection.clientId) -var client_secret=$(serviceConnection.azuresubscriptionconnection.clientSecret) -var ssh_public_key=$(publickkey.securefilepath)'
 
     
