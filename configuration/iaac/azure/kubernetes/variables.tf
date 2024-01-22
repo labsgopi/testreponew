@@ -1,11 +1,6 @@
-variable client_id {
-default = "dc53316b-69d6-4055-a98b-5c367e0ec864"
-}
-variable client_secret {
-default = "sCu8Q~eGyVv6VFR2hh0fliUpW3qjPxE5hagNsast"
-}
-variable ssh_public_key {
-}
+variable client_id {}
+variable client_secret {}
+variable ssh_public_key {}
 
 variable environment {
     default = "dev"
