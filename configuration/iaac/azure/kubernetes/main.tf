@@ -28,7 +28,9 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
     vm_size         = "standard_b2ms"
     # vm_size         = "standard_d2as_v5"      CHANGE IF AN ERROR ARISES 
   }
-
+  identity {
+    type = "SystemAssigned"
+  }
   tags = {
     Environment = var.environment
   }
