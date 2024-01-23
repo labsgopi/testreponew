@@ -69,5 +69,5 @@ stages:
         kubernetesServiceConnection: 'kubernetes-service-connection'
         namespace: 'default'
         manifests: '$(Systems.ArtifactsDirectory)/configuration/kubernetes/deployment.yaml'
-        containers: 'in28min/currency-exchange-devops:$(tag)'
+        containers: 'labsgopi/labsgopi/currencyexchange:$(tag)'
       
