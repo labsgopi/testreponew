@@ -4,8 +4,8 @@ resource "azurerm_resource_group" "resource_group" {
 }
 
 provider "azurerm" {
-  //version = "~>2.0.0"
-  features {}
+version = "=3.88.0"
+features {}
 }
 
 resource "azurerm_kubernetes_cluster" "terraform-k8s" {
@@ -28,12 +28,9 @@ resource "azurerm_kubernetes_cluster" "terraform-k8s" {
     vm_size         = "standard_b2ms"
     # vm_size         = "standard_d2as_v5"      CHANGE IF AN ERROR ARISES 
   }
-
-  service_principal {
-    client_id     = var.client_id
-    client_secret = var.client_secret
+  identity {
+    type = "SystemAssigned"
   }
-
   tags = {
     Environment = var.environment
   }
