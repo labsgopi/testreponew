@@ -29,19 +29,18 @@ stages:
     #     command: 'buildAndPush'
     #     Dockerfile: '**/Dockerfile'
     #     tags: '$(tag)'
-
-    - task: CopyFiles@2
-      inputs:
-        SourceFolder: '${System.DefaultWorkingDirectory}'
-        Contents: '**/*.yaml'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: '${System.DefaultWorkingDirectory}'
+          Contents: '**/*.yaml'
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
 # stage 1
 # Publish K8S configuration files
-    - task: PublishBuildArtifacts@1
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'manifests'
-        publishLocation: 'Container'
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'manifests'
+          publishLocation: 'Container'
 
 # stage 2
 # Download the k8s configuration file
